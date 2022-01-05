@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/connect.gd" type="Script" id=1]
+[ext_resource path="res://ui_theme.tres" type="Theme" id=2]
+
+[node name="ConnectDialog" type="WindowDialog"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -125.0
+margin_top = -40.0
+margin_right = 125.0
+margin_bottom = 101.0
+window_title = "Connect"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 234.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_horizontal = 3
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_top = 3.0
+margin_right = 84.0
+margin_bottom = 17.0
+text = "Host address"
+valign = 1
+
+[node name="HostEdit" type="TextEdit" parent="VBoxContainer/HBoxContainer"]
+margin_left = 92.0
+margin_right = 234.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+text = "localhost"
+
+[node name="ConnectButton" type="Button" parent="VBoxContainer"]
+margin_top = 28.0
+margin_right = 234.0
+margin_bottom = 72.0
+size_flags_vertical = 3
+text = "Connect"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HostButton" type="Button" parent="VBoxContainer"]
+margin_top = 80.0
+margin_right = 234.0
+margin_bottom = 125.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Host"
+
+[connection signal="pressed" from="VBoxContainer/ConnectButton" to="." method="_on_Connect_pressed"]
+[connection signal="pressed" from="VBoxContainer/ConnectButton" to="." method="_on_ConnectButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HostButton" to="." method="_on_HostButton_pressed"]
