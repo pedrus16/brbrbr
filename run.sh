@@ -1,0 +1,1 @@
+docker run -t --rm --name godot-server brbrbr-server
